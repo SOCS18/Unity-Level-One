@@ -17,13 +17,12 @@ public class PlayerController : MonoBehaviour
         if (!rb)
             rb = GetComponent<Rigidbody>();
     }
-    /*
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
-    */
 
     // Update is called once per frame
     void FixedUpdate()
