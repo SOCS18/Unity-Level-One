@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isTouchingWall;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +23,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log("pew");
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         playerMovement = Input.GetAxis("Horizontal");
-
+        
         if (playerMovement > 0 && playerMovement < 1)
             playerMovement = 1;
         if (playerMovement < 0 && playerMovement > -1)
