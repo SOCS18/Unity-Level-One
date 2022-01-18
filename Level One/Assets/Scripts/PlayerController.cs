@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] private float playerMovement;
-    [SerializeField] private float playerSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private bool isTouchingWall;
+    [SerializeField] float playerMovement;
+    [SerializeField] float playerSpeed = 5f;
+    [SerializeField] float projSpeed = 20f;
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] bool isGrounded;
+    [SerializeField] bool isTouchingWall;
+    public Transform startProjectile;
     public GameObject projectile;
 
     // Start is called before the first frame update
@@ -27,6 +29,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             Debug.Log("pew");
+
+            GameObject bullet;
+            bullet = Instantiate(projectile, startProjectile.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.right * projSpeed);
         }
     }
 

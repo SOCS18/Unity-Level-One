@@ -712,7 +712,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: 0
   playerSpeed: 5
+  projSpeed: 20
   jumpForce: 5
   isGrounded: 0
   isTouchingWall: 0
+  startProjectile: {fileID: 1427935637}
   projectile: {fileID: 6394344299027116454, guid: 45b491ce44e24f347878019be711608c, type: 3}
