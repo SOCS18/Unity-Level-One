@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Wall
   - Projectile
+  - Projectile Parent
+  - Projectile Start
   layers:
   - Default
   - TransparentFX

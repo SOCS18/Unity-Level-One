@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1321153023574911816}
   - component: {fileID: 5623010975834820934}
   - component: {fileID: 7130289856178922391}
+  - component: {fileID: 8041239066855404774}
+  - component: {fileID: 526996277130200948}
   m_Layer: 0
   m_Name: Lemon
   m_TagString: Projectile
@@ -112,3 +114,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8041239066855404774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394344299027116454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e87c5646b885e947865da19dae4d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projParent: {fileID: 0}
+  projectile: {fileID: 6394344299027116454}
+  player: {fileID: 0}
+  projStartTrans: {fileID: 0}
+  projSpeed: 375
+  projNumOnScreen: 0
+--- !u!114 &526996277130200948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394344299027116454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e87c5646b885e947865da19dae4d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projParent: {fileID: 0}
+  projectile: {fileID: 0}
+  player: {fileID: 0}
+  projStartTrans: {fileID: 0}
+  projSpeed: 375
+  projNumOnScreen: 0

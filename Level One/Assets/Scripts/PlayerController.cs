@@ -5,34 +5,51 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    [SerializeField] GameObject projParent;
+    [SerializeField] float projSpeed = 375f;
+    [SerializeField] int projNumOnScreen;
+    public Transform startProjectile;
+    public GameObject projectile;
+
     [SerializeField] float playerMovement;
     [SerializeField] float playerSpeed = 5f;
-    [SerializeField] float projSpeed = 20f;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] bool isGrounded;
     [SerializeField] bool isTouchingWall;
-    public Transform startProjectile;
-    public GameObject projectile;
+
+    public Camera mainCam;
+    public Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainCam = Camera.main;
+        
         if (!rb)
             rb = GetComponent<Rigidbody>();
+
+        projParent = GameObject.FindGameObjectWithTag("Projectile Parent");
+        projNumOnScreen = 0;
     }
     
     void Update()
     {
+        mainCam.transform.position = new Vector3(transform.position.x + offset.x, offset.y, transform.position.z + offset.z);
+
+        projNumOnScreen = projParent.transform.childCount;
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
         if (Input.GetKeyDown(KeyCode.J))
         {
+            
             Debug.Log("pew");
 
             GameObject bullet;
             bullet = Instantiate(projectile, startProjectile.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(transform.right * projSpeed);
+            bullet.transform.SetParent(projParent.transform);
         }
     }
 
