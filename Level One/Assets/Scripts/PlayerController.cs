@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && projNumOnScreen < 3)
         {
             
             Debug.Log("pew");
@@ -59,9 +59,9 @@ public class PlayerController : MonoBehaviour
         playerMovement = Input.GetAxis("Horizontal");
         
         if (playerMovement > 0 && playerMovement < 1)
-            playerMovement = 1;
+            playerMovement = 0.5f;
         if (playerMovement < 0 && playerMovement > -1)
-            playerMovement = -1;
+            playerMovement = -0.5f;
 
         if (playerMovement < 0)
         {
