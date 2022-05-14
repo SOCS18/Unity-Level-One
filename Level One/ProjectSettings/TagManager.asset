@@ -10,6 +10,7 @@ TagManager:
   - Projectile Parent
   - Projectile Start
   - Enemy
+  - Crosshair
   layers:
   - Default
   - TransparentFX
